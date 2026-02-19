@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const Contact = () => {
   const text = `Got a question, how or project Idea?
-    WE’D love to hear from you and discus further!`;
+    I’D love to hear from you and discus further!`;
   const items = [
     "just imagin, I code",
     "just imagin, I code",
@@ -46,14 +46,14 @@ const Contact = () => {
               <h2>E-mail</h2>
               <div className="w-full h-px my-2 bg-white/30" />
               <p className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl">
-                JohnDoe@gmail.com
+                saditimimam9@gmail.com
               </p>
             </div>
             <div className="social-link">
               <h2>Phone</h2>
               <div className="w-full h-px my-2 bg-white/30" />
               <p className="text-xl lowercase md:text-2xl lg:text-3xl">
-                +33 7 12 12 32 12
+                +31 6 13 055095
               </p>
             </div>
             <div className="social-link">
