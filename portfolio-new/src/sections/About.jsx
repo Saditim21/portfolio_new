@@ -40,22 +40,22 @@ When I’m not building:
     });
   });
   return (
-    <section id="about" className="min-h-screen bg-black rounded-b-4xl">
+    <section id="about" className="min-h-screen bg-black rounded-b-3xl sm:rounded-b-4xl">
       <AnimatedHeaderSection
-        subTitle={"Cod with purpose, Built to scale"}
+        subTitle={"Code with purpose, Built to scale"}
         title={"About"}
         text={text}
         textColor={"text-white"}
         withScrollTrigger={true}
       />
-      <div className="flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60">
+      <div className="flex flex-col items-center justify-between gap-8 sm:gap-12 md:gap-16 px-4 xs:px-6 sm:px-8 md:px-10 pb-10 sm:pb-16 text-base xs:text-lg sm:text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60">
         <img
           ref={imgRef}
           src="images/man.jpg"
           alt="man"
-          className="w-md rounded-3xl"
+          className="w-full max-w-xs xs:max-w-sm sm:max-w-md rounded-2xl sm:rounded-3xl object-cover aspect-[3/4] lg:aspect-auto lg:w-md flex-shrink-0"
         />
-        <AnimatedTextLines text={aboutText} className={"w-full"} />
+        <AnimatedTextLines text={aboutText} className={"w-full lg:max-w-xl xl:max-w-2xl"} />
       </div>
     </section>
   );

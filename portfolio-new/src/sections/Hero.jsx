@@ -4,12 +4,22 @@ import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 const Hero = () => {
-  const isMobile = useMediaQuery({ maxWidth: 853 });
+  const isSmallMobile = useMediaQuery({ maxWidth: 480 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
+
+  const getPlanetScale = () => {
+    if (isSmallMobile) return 0.55;
+    if (isMobile) return 0.65;
+    if (isTablet) return 0.8;
+    return 1;
+  };
+
   const text = `I help growing brands and startups gain an
 unfair advantage through premium
 results driven webs/apps`;
   return (
-    <section id="home" className="flex flex-col justify-end min-h-screen">
+    <section id="home" className="flex flex-col justify-end min-h-[100svh]">
       <AnimatedHeaderSection
         subTitle={"404 No Bugs Found"}
         title={"Saditim"}
@@ -17,8 +27,7 @@ results driven webs/apps`;
         textColor={"text-black"}
       />
       <figure
-        className="absolute inset-0 -z-50"
-        style={{ width: "100vw", height: "100vh" }}
+        className="absolute inset-0 -z-50 w-full h-[100svh]"
       >
         <Canvas
           shadows
@@ -26,7 +35,7 @@ results driven webs/apps`;
         >
           <ambientLight intensity={0.5} />
           <Float speed={0.5}>
-            <Planet scale={isMobile ? 0.7 : 1} />
+            <Planet scale={getPlanetScale()} />
           </Float>
           <Environment resolution={256}>
             <group rotation={[-Math.PI / 3, 4, 1]}>

@@ -119,7 +119,7 @@ const Works = () => {
             target="_blank"
             rel="noopener noreferrer"
             id="project"
-            className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
+            className="relative flex flex-col gap-1 py-3 xs:py-4 sm:py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -132,16 +132,16 @@ const Works = () => {
             />
 
             {/* title */}
-            <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
-              <h2 className="lg:text-[32px] text-[26px] leading-none">
+            <div className="flex justify-between items-center px-4 xs:px-6 sm:px-8 md:px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
+              <h2 className="text-xl xs:text-2xl sm:text-[26px] lg:text-[32px] leading-none">
                 {project.name}
               </h2>
-              <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
+              <Icon icon="lucide:arrow-up-right" className="size-4 xs:size-5 md:size-6 flex-shrink-0" />
             </div>
             {/* divider */}
-            <div className="w-full h-0.5 bg-black/80" />
+            <div className="w-full h-px sm:h-0.5 bg-black/80" />
             {/* framework */}
-            <div className="flex px-10 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
+            <div className="flex flex-wrap px-4 xs:px-6 sm:px-8 md:px-10 text-[10px] xs:text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-3 sm:gap-x-5 md:group-hover:px-12">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
@@ -152,7 +152,7 @@ const Works = () => {
               ))}
             </div>
             {/* mobile preview image */}
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
+            <div className="relative flex items-center justify-center px-4 xs:px-6 sm:px-8 md:hidden h-[250px] xs:h-[300px] sm:h-[350px] mt-2">
               <img
                 src={project.bgImage}
                 alt={`${project.name}-bg-image`}
@@ -161,15 +161,15 @@ const Works = () => {
               <img
                 src={project.image}
                 alt={`${project.name}-image`}
-                className="absolute bg-center px-14 rounded-xl"
+                className="absolute bg-center px-6 xs:px-8 sm:px-12 rounded-lg sm:rounded-xl max-w-full"
               />
             </div>
           </a>
         ))}
-        {/* desktop Flaoting preview image */}
+        {/* desktop Floating preview image */}
         <div
           ref={previewRef}
-          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[960px] md:block hidden opacity-0"
+          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-4 md:border-6 lg:border-8 border-black pointer-events-none w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] md:block hidden opacity-0"
         >
           {currentIndex !== null && (
             <img
