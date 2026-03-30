@@ -112,14 +112,17 @@ const Works = () => {
         className="relative flex flex-col font-light"
         onMouseMove={handleMouseMove}
       >
-        {projects.map((project, index) => (
-          <a
+        {projects.map((project, index) => {
+          const Wrapper = project.href ? 'a' : 'div';
+          const wrapperProps = project.href
+            ? { href: project.href, target: "_blank", rel: "noopener noreferrer" }
+            : {};
+          return (
+          <Wrapper
             key={project.id}
-            href={project.href || undefined}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...wrapperProps}
             id="project"
-            className="relative flex flex-col gap-1 py-3 xs:py-4 sm:py-5 cursor-pointer group md:gap-0"
+            className={`relative flex flex-col gap-1 py-3 xs:py-4 sm:py-5 group md:gap-0 ${project.href ? 'cursor-pointer' : 'cursor-default'}`}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -133,10 +136,24 @@ const Works = () => {
 
             {/* title */}
             <div className="flex justify-between items-center px-4 xs:px-6 sm:px-8 md:px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
-              <h2 className="text-xl xs:text-2xl sm:text-[26px] lg:text-[32px] leading-none">
-                {project.name}
-              </h2>
-              <Icon icon="lucide:arrow-up-right" className="size-4 xs:size-5 md:size-6 flex-shrink-0" />
+              <div className="flex items-center gap-2 xs:gap-3 flex-wrap">
+                <h2 className="text-xl xs:text-2xl sm:text-[26px] lg:text-[32px] leading-none">
+                  {project.name}
+                </h2>
+                {project.isOwnCompany && (
+                  <span className="px-2 py-0.5 text-[10px] xs:text-xs font-medium uppercase tracking-wide bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full">
+                    My Company
+                  </span>
+                )}
+                {project.status === "In Development" && (
+                  <span className="px-2 py-0.5 text-[10px] xs:text-xs font-medium uppercase tracking-wide bg-blue-600 text-white rounded-full">
+                    In Development
+                  </span>
+                )}
+              </div>
+              {project.href && (
+                <Icon icon="lucide:arrow-up-right" className="size-4 xs:size-5 md:size-6 flex-shrink-0" />
+              )}
             </div>
             {/* divider */}
             <div className="w-full h-px sm:h-0.5 bg-black/80" />
@@ -164,8 +181,9 @@ const Works = () => {
                 className="absolute bg-center px-6 xs:px-8 sm:px-12 rounded-lg sm:rounded-xl max-w-full"
               />
             </div>
-          </a>
-        ))}
+          </Wrapper>
+        );
+        })}
         {/* desktop Floating preview image */}
         <div
           ref={previewRef}

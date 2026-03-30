@@ -131,12 +131,31 @@ export const projects = [
   },
   {
     id: 4,
+    name: "CarePulse Appointment System",
+    description:
+      "A system designed and developed for users to be able to make appointments with their prefered doctors",
+    href: "https://health-system-pi.vercel.app/",
+    image: "/assets/projects/health.jpg",
+    bgImage: "/assets/backgrounds/table.jpg",
+    frameworks: [
+      { id: 1, name: "NextJS" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 4, name: "Appwrite" },
+      { id: 5, name: "ShadCN UI" },
+      { id: 6, name: "Twilio" },
+      { id: 7, name: "Sentry" },
+    ],
+  },
+  {
+    id: 5,
     name: "GulArt Store",
     description:
       "A custom print shop for a Bulgarian family business offering personalized gifts—from photo crystals to keychains—with a real-time product designer, Stripe payments, and Ekont/Speedy shipping integration.",
     href: "https://gul-art.vercel.app/",
     image: "/assets/projects/gulart.jpg",
     bgImage: "/assets/backgrounds/poster.jpg",
+    status: "In Development",
     frameworks: [
       { id: 1, name: "React 18" },
       { id: 2, name: "Tailwind CSS" },
@@ -152,21 +171,23 @@ export const projects = [
     ],
   },
   {
-    id: 5,
-    name: "CarePulse Appointment System",
+    id: 6,
+    name: "ClarionAI",
     description:
-      "A system designed and developed for users to be able to make appointments with their prefered doctors",
-    href: "https://health-system-pi.vercel.app/",
-    image: "/assets/projects/health.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
+      "AI compliance made simple for European businesses. ClarionAI identifies AI systems, classifies risk, and generates the documentation needed for EU AI Act compliance—before the deadline.",
+    href: "https://www.clarionai.eu/",
+    image: "/assets/projects/compyai.webp",
+    bgImage: "/assets/backgrounds/blanket.jpg",
+    isOwnCompany: true,
+    status: "In Development",
     frameworks: [
-      { id: 1, name: "NextJS" },
-      { id: 2, name: "TypeScript" },
-      { id: 3, name: "Tailwind CSS" },
-      { id: 4, name: "Appwrite" },
-      { id: 5, name: "ShadCN UI" },
-      { id: 6, name: "Twilio" },
-      { id: 7, name: "Sentry" },
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "shadcn/ui" },
+      { id: 4, name: "Supabase" },
+      { id: 5, name: "Next.js API Routes" },
+      { id: 6, name: "Zod" },
+      { id: 7, name: "Stripe" },
     ],
   }
 ];
